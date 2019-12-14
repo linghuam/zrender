@@ -25,7 +25,7 @@ function swapExtrema() {
     extrema[0] = extrema[1];
     extrema[1] = tmp;
 }
-
+// winding:弯曲的
 function windingCubic(x0, y0, x1, y1, x2, y2, x3, y3, x, y) {
     // Quick reject
     if (
@@ -34,6 +34,7 @@ function windingCubic(x0, y0, x1, y1, x2, y2, x3, y3, x, y) {
     ) {
         return 0;
     }
+    // 计算三次贝塞尔方程根
     var nRoots = curve.cubicRootAt(y0, y1, y2, y3, y, roots);
     if (nRoots === 0) {
         return 0;

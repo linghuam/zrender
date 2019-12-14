@@ -108,7 +108,7 @@ Displayable.prototype = {
     dragging: false,
 
     /**
-     * 是否相应鼠标事件
+     * 是否响应鼠标事件
      * @name module:/zrender/graphic/Displayable#silent
      * @type {boolean}
      * @default false

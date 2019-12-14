@@ -1,5 +1,5 @@
 /**
- * Displayable for incremental rendering. It will be rendered in a separate layer
+ * Displayable for incremental(递增的) rendering. It will be rendered in a separate layer
  * IncrementalDisplay have two main methods. `clearDisplayables` and `addDisplayables`
  * addDisplayables will render the added displayables incremetally.
  *

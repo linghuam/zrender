@@ -32,13 +32,14 @@ export function $override(name, fn) {
 export function getWidth(text, font) {
     font = font || DEFAULT_FONT;
     var key = text + ':' + font;
+    // 利用 textWidthCache 缓存文字宽度，避免重复计算。
     if (textWidthCache[key]) {
         return textWidthCache[key];
     }
-
+    // 以 '\n' 作为分行标志
     var textLines = (text + '').split('\n');
     var width = 0;
-
+    // 以最宽的行作为最终的宽度
     for (var i = 0, l = textLines.length; i < l; i++) {
         // textContain.measureText may be overrided in SVG or VML
         width = Math.max(measureText(textLines[i], font).width, width);
@@ -62,7 +63,7 @@ export function getWidth(text, font) {
  * @param {string} [textVerticalAlign='top']
  * @param {Array.<number>} [textPadding]
  * @param {Object} [rich]
- * @param {Object} [truncate]
+ * @param {Object} [truncate] 截断
  * @return {Object} {x, y, width, height, lineHeight}
  */
 export function getBoundingRect(text, font, textAlign, textVerticalAlign, textPadding, textLineHeight, rich, truncate) {
